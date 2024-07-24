@@ -1,0 +1,34 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+
+#landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-image: url("landing_background.png");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 560px;
+}
+
+
+
+img{
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 150px;
+    margin-bottom: 50px;
+}
+
+a,
+button{
+    text-decoration-color: black;
+    border-radius: 10px;
+}
