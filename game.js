@@ -33,7 +33,6 @@
         ]
     },
 
-    
 */
 
 // Define game states and initial setup
@@ -298,8 +297,8 @@ const scenes = {
         text: "Intrigued by the mystical creatures' presence, you approach the starlit grove with curiosity. They welcome you warmly, sharing their ancient songs and tales of the forest. Inspired by their wisdom and harmony, you receive a radiant gem of Wisdom, symbolizing insight gained from shared knowledge. Your journey continues with a deeper understanding of the forest's mysteries, bypassing a treacherous bog that would have otherwise hindered your progress.",
         image: "./img/starlitgrove.png",
         options: [
-            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
-            {text: "Go to home page", nextScene: "start"}
+            {text: "Go to the Mystic Mountains", nextScene: "mysticMountain"},
+            {text: "Return Home", nextScene: "start"}
         ]
     },
 
@@ -307,8 +306,8 @@ const scenes = {
         text: "Deciding to maintain focus on your quest, you bypass the starlit grove without engaging with the creatures. While you avoid potential distractions, you miss the opportunity to gain Understanding from the mystical creatures' teachings, encountering a dense thicket of thorns that slows your journey.",
         image: "./img/starlitgrove.png",
         options: [
-            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
-            {text: "Go to home page", nextScene: "start"}
+            {text: "Go to the Mystic Mountains", nextScene: "mysticMountain"},
+            {text: "Return Home", nextScene: "start"}
         ]
     },
 
@@ -330,8 +329,8 @@ const scenes = {
         text: "Braving the eerie twilight marsh, you navigate through its murky waters, using your keen senses to avoid hidden perils. By demonstrating courage and perseverance, you discover a hidden passage guarded by ancient spirits, who reward you with a gleaming gem of Courage. Your journey continues with newfound bravery, bypassing a labyrinth of illusions that would have otherwise led you astray.",
         image: "./img/twilightmarsh.png",
         options: [
-            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
-            {text: "Go to home page", nextScene: "start"}
+            {text: "Go to the Mystic Mountains", nextScene: "mysticMountain"},
+            {text: "Return Home", nextScene: "start"}
         ]
     },
 
@@ -339,8 +338,8 @@ const scenes = {
         text: "Opting to find a detour around the twilight marsh, you carefully navigate through dense underbrush and avoid the potential dangers lurking within. While you avoid immediate risks, you miss the opportunity to demonstrate Resilience in the face of challenges, encountering a series of puzzling illusions that test your resolve.",
         image: "./img/twilightmarsh.png",
         options: [
-            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
-            {text: "Go to home page", nextScene: "start"}
+            {text: "Go to the Mystic Mountains", nextScene: "mysticMountain"},
+            {text: "Return Home", nextScene: "start"}
         ]
     },
 
