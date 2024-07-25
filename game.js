@@ -1,6 +1,6 @@
 /*
 
-// Template
+// Template for options 
     //NAME Option
     namedChoice: {
         text: "TEXT",
@@ -48,7 +48,6 @@ let gameState = {
         spirituality: false,
         resilience: false,
         adaptability: false
-        // Add more gem types as needed
     }
 };
 
@@ -440,7 +439,7 @@ const scenes = {
         text: "Choosing to meditate at Wisdom's Path, you find a sense of peace and clarity as you connect with the ancient wisdom of the sages. Inspired by your introspection, you receive a radiant gem of Wisdom, symbolizing your deepened understanding and insight. Your journey continues with renewed purpose and foresight, avoiding a treacherous cliffside that would have otherwise posed a danger.",
         image: "./img/wisdomsPath",
         options: [
-            {text: "Whispering Woods", nextScene: "whisperingWoods"},
+            {text: "Whispering Forest", nextScene: "whisperingForest"},
             {text: "Luminous Peak", nextScene: "luminousPeak"}
         ]
     },
@@ -449,7 +448,7 @@ const scenes = {
         text: "TEXTOpting to bypass Wisdom's Path and continue exploring the mountain, you remain focused on uncovering more of its secrets. While you proceed with determination, you miss the opportunity to gain Reflection from the serene environment and encounter a steep, rocky descent that tests your agility.",
         image: "./img/wisdomsPath",
         options: [
-            {text: "Whispering Woods", nextScene: "whisperingWoods"},
+            {text: "Whispering Forest", nextScene: "whisperingForest"},
             {text: "Luminous Peak", nextScene: "luminousPeak"}
         ]
     },
@@ -472,7 +471,7 @@ const scenes = {
         text: "Embracing the challenge, you venture into Stormy Pass, where dark clouds swirl and lightning flashes overhead. Through resilience and determination, you navigate through the tumultuous weather and reach the other side unscathed. Impressed by your bravery, the mountain spirits reward you with a shimmering gem of Resilience, symbolizing your ability to endure and overcome adversity. Your journey continues with enhanced resilience, bypassing a maze of sharp rocks that would have otherwise slowed your progress.",
         image: "./img/stormyPass",
         options: [
-            {text: "Whispering Woods", nextScene: "whisperingWoods"},
+            {text: "Whispering Wood", nextScene: "whisperingForest"},
             {text: "Luminous Peak", nextScene: "lumionsPeak"}
         ]
     },
@@ -481,15 +480,15 @@ const scenes = {
         text: "Opting to seek shelter or find an alternative route around Stormy Pass, you wait out the storm or navigate a safer path. While you avoid immediate dangers, you miss the opportunity to demonstrate Courage in the face of elemental challenges and encounter a winding path that leads to a daunting cliff.",
         image: "./img/stormyPass",
         options: [
-            {text: "Whispering Woods", nextScene: "whisperingWoods"},
+            {text: "Whispering Forest", nextScene: "whisperingForest"},
             {text: "Luminous Peak", nextScene: "lumionsPeak"}
         ]
     },
 
-    //Whispering Woods Option
-    whisperingWoods: {
-        text: "To the right, a winding path leads into the Whispering Woods, where ancient trees whisper secrets of the past and pathways shift with each passing breeze.",
-        image: "./img/whisperingWoods",
+    //Whispering Forest Option
+    whisperingForest: {
+        text: "To the right, a winding path leads into the Whispering Forest, where ancient trees whisper secrets of the past and pathways shift with each passing breeze.",
+        image: "./img/whisperingForest.png",
         options: [
             {text: "Listen to the Trees", action: function() {
                 gameState.gems.patience = true;
@@ -595,111 +594,6 @@ const scenes = {
         ]
     }
 };
-
-    
-
-
-
-
-
-
-    /*
-    shiftingPaths: {
-        text: "You navigate the shifting paths with caution, avoiding traps and finding hidden treasures...",
-        options: [
-            { text: "Proceed Deeper into the Woods", nextScene: "whisperingWoods" },
-            { text: "Return to the Crossroads", nextScene: "start" }
-        ]
-    },
-    
-    celestialSummit: {
-        text: "You reach the Celestial Summit, where celestial beings share profound insights...",
-        options: [
-            { text: "Embrace the Wisdom", nextScene: "mysticMountain" }
-        ]
-    },
-    
-    crystalCaverns: {
-        text: "You explore the Crystal Caverns, uncovering rare crystals and their mystical energies...",
-        options: [
-            { text: "Gather Luminous Crystals", nextScene: "mysticMountain" }
-        ]
-    },
-    ancientLore: {
-        text: "You delve into ancient lore, discovering lost knowledge and forgotten legends...",
-        options: [
-            { text: "Continue Your Research", nextScene: "royalLibrary" }
-        ]
-    },
-    librarianGuidance: {
-        text: "The librarian imparts their wisdom, shedding light on the castle's history and mysteries...",
-        options: [
-            { text: "Thank the Librarian", nextScene: "royalLibrary" }
-        ]
-    },
-    presentIdeas: {
-        text: "You present your ideas to the monarch, influencing decisions that shape the kingdom's future...",
-        options: [
-            { text: "Attend to Kingdom Matters", nextScene: "royalCourt" }
-        ]
-    },
-    observeProceedings: {
-        text: "You observe court proceedings, gaining insights into the kingdom's governance and challenges...",
-        options: [
-            { text: "Reflect on What You've Learned", nextScene: "royalCourt" }
-        ]
-    },
-    // Additional scenes and choices
-    secretGrove: {
-        text: "You discover a hidden grove filled with mystical creatures and glowing flowers...",
-        options: [
-            { text: "Befriend the Creatures", action: function() {
-                gameState.gems.harmony = true;
-                gameState.currentScene = "befriendCreatures";
-                updateGame();
-            }},
-            { text: "Explore Further", action: function() {
-                gameState.currentScene = "exploreFurtherGrove";
-                updateGame();
-            }}
-        ]
-    },
-    befriendedCreatures: {
-        text: "You establish a bond with the mystical creatures, gaining their trust and learning their secrets...",
-        options: [
-            { text: "Continue Exploring the Grove", nextScene: "secretGrove" },
-            { text: "Return to the Path", nextScene: "start" }
-        ]
-    },
-    exploreFurtherGrove: {
-        text: "You uncover a hidden spring with healing waters and a forgotten relic...",
-        options: [
-            { text: "Take the Relic", action: function() {
-                addToInventory("Forgotten Relic");
-                gameState.currentScene = "takeRelic";
-                updateGame();
-            }},
-            { text: "Study the Healing Waters", action: function() {
-                gameState.currentScene = "studyWaters";
-                updateGame();
-            }}
-        ]
-    },
-    takeRelic: {
-        text: "You take the Forgotten Relic, feeling its power resonating within you...",
-        options: [
-            { text: "Return to the Path", nextScene: "start" }
-        ]
-    },
-    studyWaters: {
-        text: "You study the healing properties of the spring, enhancing your magic abilities...",
-        options: [
-            { text: "Continue Exploring", nextScene: "exploreFurtherGrove" },
-            { text: "Return to the Path", nextScene: "start" }
-        ]
-    }
-};
-*/
 
 // Function to update the game interface with current scene and options
 function updateGame() {
