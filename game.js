@@ -63,6 +63,9 @@ let playerState = {
     }
 };
 
+
+//--------------------------------------------------\\
+
 // Scenes and choices
 const scenes = {
     start: {
@@ -705,6 +708,8 @@ const scenes = {
         ]
     },    
 };
+
+//--------------------------------------------------\\
 
 // Function to update the game interface with current scene and options
 function updateGame() {
