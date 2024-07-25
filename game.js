@@ -417,7 +417,7 @@ const scenes = {
         ]
     },
 
-    namedConcequence: {
+    bypassTheCaverns: {
         text: "Opting to bypass the Crystal Caverns, you skirt around their entrances, avoiding potential dangers or distractions within. While you proceed without incident, you miss the opportunity to uncover Inner Strength from the caverns' challenges and encounter a steep, rocky path that requires careful navigation.",
         image: "./img/crystalcaverns.png",
         options: [
@@ -666,7 +666,7 @@ const scenes = {
         ]
     },
 
-    namedConcequence: {
+    visitTheMerchants: {
         text: "You approach a merchant and ask if you could ask him a few questions. The merchant agrees so you sit down and start firing off question after question the merchant is happy to answer all of them. A glistering gem forms in your hand and you gain a gem of curiosity. With this new found wonder you set off and become a extermely wealthy merchant.",
         image: "./img/grandCourtyard.png",
         options: [
