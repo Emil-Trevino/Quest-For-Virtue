@@ -47,7 +47,9 @@ let gameState = {
         leadership: false,
         spirituality: false,
         resilience: false,
-        adaptability: false
+        adaptability: false,
+        justice: false,
+        curiosity: false
     }
 };
 
@@ -67,9 +69,9 @@ const scenes = {
         text: "Welcome to the Quest for Virtue, where you embark on an adventure to discover and embody core        values that make you a hero!",
         image: "home-image.png",
         options: [
-            { text: "Enter the Whispering Woods", nextScene: "whisperingWoods" },
-            { text: "Ascend to the Mystic Mountain", nextScene: "mysticMountain" },
-            { text: "Explore the Royal Castle", nextScene: "royalCastle" }
+            {text: "Enter the Whispering Woods", nextScene: "whisperingWoods"},
+            {text: "Ascend to the Mystic Mountain", nextScene: "mysticMountain"},
+            {text: "Explore the Royal Castle", nextScene: "royalCastle"}
         ]
     },
 
@@ -78,7 +80,7 @@ const scenes = {
         text: "You enter the Whispering Woods. Ancient trees whisper secrets around you...",
         image: "./img/whisperingwoods.png",
         options: [
-            { text: "The Lost Faerie", action: function() {
+            {text: "The Lost Faerie", action: function() {
                 gameState.gems.wisdom = true;
                 gameState.currentScene = "LostFaerieChoices";
                 updateGame();
@@ -92,22 +94,22 @@ const scenes = {
         text: "You hear a soft sobbing sound ahead. Through a break in the foliage, you spot a tiny faerie with shimmering wings sitting on a rock, looking lost and forlorn.",
         image: "./img/lostFaerie.png",
         options: [
-            { text: "Approach with Kindness", action: function() {
+            {text: "Approach with Kindness", action: function() {
                 gameState.gems.kindness = true;
                 gameState.currentScene = "LostFaerieKindness";
                 updateGame();
             }},
-            { text: "Search for Clues", action: function() {
+            {text: "Search for Clues", action: function() {
                 gameState.gems.resourcefulness = true;
                 gameState.currentScene = "LostFaerieClues";
                 updateGame();
             }},
-            { text: "Use Magic Knowledge", action: function() {
+            {text: "Use Magic Knowledge", action: function() {
                 gameState.gems.creativity = true;
                 gameState.currentScene = "LostFaerieKnowledge";
                 updateGame();
             }},
-            { text: "Ignore and Continue", nextScene: "LostFaerieContinue" },
+            {text: "Ignore and Continue", nextScene: "LostFaerieContinue"},
         ]
     },
 
@@ -115,8 +117,8 @@ const scenes = {
         text: "You approach the faerie with kindness, calming her fears and offering assistance. She explains that she got separated from her family during a storm and doesn't know how to get back. By showing kindness, you gain the faerie's trust, and she gives you a small glowing gem of Kindness as a token of gratitude. Your journey continues with the faerie happily guiding you through a shortcut, avoiding a potential trap set by mischievous sprites.",
         image: "./img/lostFaerie.png",
         options: [
-            { text: "Whispering Grove", nextScene: "WhisperingGrove" },
-            { text: "Shadowy Glen", nextScene: "ShadowyGlen" },
+            {text: "Whispering Grove", nextScene: "WhisperingGrove"},
+            {text: "Shadowy Glen", nextScene: "ShadowyGlen"},
         ]
     },
 
@@ -124,8 +126,8 @@ const scenes = {
         text: "You carefully examine the surroundings, noticing a faint trail of sparkling dust leading towards a distant grove of luminous flowers. Following the trail, you discover the faerie's family gathered anxiously. They thank you for your resourcefulness and give you a shimmering gem of Resourcefulness. Your journey continues with the faerie's family guiding you through a hidden path, which leads to a tranquil meadow where you find a treasure chest with helpful supplies.",
         image: "./img/lostFaerie.png",
         options: [
-            { text: "Whispering Grove", nextScene: "WhisperingGrove" },
-            { text: "Shadowy Glen", nextScene: "ShadowyGlen" },
+            {text: "Whispering Grove", nextScene: "WhisperingGrove"},
+            {text: "Shadowy Glen", nextScene: "ShadowyGlen"},
         ]
     },
 
@@ -133,8 +135,8 @@ const scenes = {
         text: "Drawing upon your magical expertise, you conjure a gentle glow that illuminates the path for the faerie to follow. Impressed by your skill, the faerie rewards you with a sparkling gem of Creativity, acknowledging your inventive approach. Your journey continues smoothly as the faerie accompanies you, sharing tales of magical creatures and offering guidance through a labyrinthine section of the forest.",
         image: "./img/lostFaerie.png",
         options: [
-            { text: "Whispering Grove", nextScene: "WhisperingGrove" },
-            { text: "Shadowy Glen", nextScene: "ShadowyGlen" },
+            {text: "Whispering Grove", nextScene: "WhisperingGrove"},
+            {text: "Shadowy Glen", nextScene: "ShadowyGlen"},
         ]
     },
 
@@ -142,8 +144,8 @@ const scenes = {
         text: "Ignoring the faerie's plight, you decide to press on with your quest without intervening. As you continue, you encounter a series of confusing paths and encounter mischievous sprites who lead you astray. Eventually, you find your way out of the forest but realize you missed an opportunity to demonstrate Compassion and receive valuable guidance.",
         image: "./img/lostFaerie.png",
         options: [
-            { text: "Whispering Grove", nextScene: "WhisperingGrove" },
-            { text: "Shadowy Glen", nextScene: "ShadowyGlen" },
+            {text: "Whispering Grove", nextScene: "WhisperingGrove"},
+            {text: "Shadowy Glen", nextScene: "ShadowyGlen"},
         ]
     },
 
@@ -152,12 +154,12 @@ const scenes = {
         text: "A path veers off to the right, leading to a tranquil grove where ethereal whispers beckon you closer.",
         image: "./img/whisperinggrove.png",
         options: [
-            { text: "Investigate the Whispers", action: function() {
+            {text: "Investigate the Whispers", action: function() {
                 gameState.gems.compassion = true;
                 gameState.currentScene = "InvestigateTheWhispers";
                 updateGame();
             }},
-            { text: "Bypass the Grove", nextScene: "BypassTheGrove" },
+            {text: "Bypass the Grove", nextScene: "BypassTheGrove"},
         ]
     },
 
@@ -165,8 +167,8 @@ const scenes = {
         text: "Curious about the whispers, you approach the grove cautiously. You discover a group of lost spirits, trapped between realms and seeking guidance. Through compassionate conversations and thoughtful advice, you help the spirits find peace. In gratitude, they gift you a glowing gem of Compassion. Your journey continues with newfound wisdom and the spirits' guidance, avoiding a perilous swamp that would have slowed your progress",
         image: "./img/whisperinggrove.png",
         options: [
-            { text: "Moonlit Clearing", nextScene: "MoonlitClearing" },
-            { text: "Crystal Falls", nextScene: "CrystalFalls" },
+            {text: "Moonlit Clearing", nextScene: "MoonlitClearing"},
+            {text: "Crystal Falls", nextScene: "CrystalFalls"},
         ]
     },
 
@@ -174,8 +176,8 @@ const scenes = {
         text: "Deciding to stay focused on your quest, you bypass the grove without investigating the whispers. Your path remains straightforward but you miss the opportunity to demonstrate Empathy and receive the spirits' guidance, making your journey more challenging as you encounter tricky puzzles along the main route.",
         image: "./img/whisperinggrove.png",
         options: [
-            { text: "Moonlit Clearing", nextScene: "MoonlitClearing" },
-            { text: "Crystal Falls", nextScene: "CrystalFalls" },
+            {text: "Moonlit Clearing", nextScene: "MoonlitClearing"},
+            {text: "Crystal Falls", nextScene: "CrystalFalls"},
         ]
     },
     
@@ -184,12 +186,12 @@ const scenes = {
         text: "To the left, a darker path winds through a shadowy glen, where eerie shadows flicker amidst ancient stone ruins.",
         image: "./img/shadowyglen.png",
         options: [
-            { text: "Explore the Ruins", action: function() {
+            {text: "Explore the Ruins", action: function() {
                 gameState.gems.wisdom = true;
                 gameState.currentScene = "ExploreTheRuins";
             updateGame();
             }},
-            { text: "Avoid the Glen", nextScene: "AvoidTheGlen" },
+            {text: "Avoid the Glen", nextScene: "AvoidTheGlen"},
         ]
     },
 
@@ -197,8 +199,8 @@ const scenes = {
         text: "Intrigued by the ancient ruins, you venture into the shadowy glen. Within the ruins, you encounter a series of puzzles that test your intellect and patience. By solving the puzzles with determination and creativity, you unearth a hidden gem of Wisdom left behind by an ancient sage. Your journey continues with enhanced knowledge and insight, navigating through a maze of illusions that would have otherwise led you astray.",
         image: "./img/shadowyglen.png",
         options: [
-            { text: "Moonlit Clearing", nextScene: "MoonlitClearing" },
-            { text: "Crystal Falls", nextScene: "CrystalFalls" },
+            {text: "Moonlit Clearing", nextScene: "MoonlitClearing"},
+            {text: "Crystal Falls", nextScene: "CrystalFalls"},
         ]
     },
 
@@ -206,8 +208,8 @@ const scenes = {
         text: "Feeling uneasy about the shadows and ruins, you choose to avoid the glen and stick to the main path. While you avoid potential dangers lurking in the shadows, you miss the opportunity to gain Knowledge and must find an alternative route through a dense thicket, encountering fierce creatures along the way.",
         image: "./img/shadowyglen.png",
         options: [
-            { text: "Moonlit Clearing", nextScene: "MoonlitClearing" },
-            { text: "Crystal Falls", nextScene: "CrystalFalls" },
+            {text: "Moonlit Clearing", nextScene: "MoonlitClearing"},
+            {text: "Crystal Falls", nextScene: "CrystalFalls"},
         ]
     },
 
@@ -216,12 +218,12 @@ const scenes = {
         text: "A faint glow catches your eye to the right, leading to a serene moonlit clearing where fireflies dance in harmony.",
         image: "./img/moonlitclearing.png",
         options: [
-            { text: "Join the Firefly Dance", action: function() {
+            {text: "Join the Firefly Dance", action: function() {
                 gameState.gems.unity = true;
                 gameState.currentScene = "JoinTheFireflyDance";
                 updateGame();
             }},
-            { text: "Continue without Distraction", nextScene: "ContinueWithoutDistraction" },
+            {text: "Continue without Distraction", nextScene: "ContinueWithoutDistraction"},
         ]
     },
 
@@ -229,8 +231,8 @@ const scenes = {
         text: "Mesmerized by the fireflies' graceful movements, you join their dance under the moonlit sky. Your heart fills with a sense of peace and harmony. Inspired by the unity of the fireflies, you receive a glowing gem of Unity, symbolizing strength through togetherness. Your journey continues with a renewed sense of purpose and unity, navigating through a maze of enchanted vines that would have otherwise ensnared you.",
         image: "./img/moonlitclearing.png",
         options: [
-            { text: "Starlit Grove", nextScene: "StarlitGrove" },
-            { text: "Twilight Marsh", nextScene: "TwilightMarsh" },
+            {text: "Starlit Grove", nextScene: "StarlitGrove"},
+            {text: "Twilight Marsh", nextScene: "TwilightMarsh"},
         ]
     },
 
@@ -238,8 +240,8 @@ const scenes = {
         text: "Opting to press onward without pausing in the moonlit clearing, you maintain focus on your quest. While you avoid potential distractions, you miss the opportunity to experience Harmony with the natural world and encounter a magical barrier guarded by spirits that would have guided you through a perilous swamp.",
         image: "./img/moonlitclearing.png",
         options: [
-            { text: "Starlit Grove", nextScene: "StarlitGrove" },
-            { text: "Twilight Marsh", nextScene: "TwilightMarsh" },
+            {text: "Starlit Grove", nextScene: "StarlitGrove"},
+            {text: "Twilight Marsh", nextScene: "TwilightMarsh"},
         ]
     },
 
@@ -248,12 +250,12 @@ const scenes = {
         text: "To the left, a soft murmur of cascading water beckons from a hidden waterfall known as Crystal Falls.",
         image: "./img/crystalfalls.png",
         options: [
-            { text: "Explore Crystal Falls", action: function() {
+            {text: "Explore Crystal Falls", action: function() {
                 gameState.gems.unity = true;
                 gameState.currentScene = "ExploreCrystalFalls";
             updateGame();
             }},
-            { text: "Stay on Course", nextScene: "StayOnCourse" },
+            {text: "Stay on Course", nextScene: "StayOnCourse"},
         ]
     },
 
@@ -261,8 +263,8 @@ const scenes = {
         text: "Drawn by the allure of Crystal Falls, you discover a hidden grotto behind the cascading waters. Within, you find ancient runes etched into the walls. By deciphering the runes with patience and determination, you unlock a shimmering gem of Perseverance left by an ancient sage. Your journey continues with newfound perseverance, avoiding a labyrinth of illusions that would have otherwise led you astray.",
         image: "./img/crystalfalls.png",
         options: [
-            { text: "Starlit Grove", nextScene: "StarlitGrove" },
-            { text: "Twilight Marsh", nextScene: "TwilightMarsh" },
+            {text: "Starlit Grove", nextScene: "StarlitGrove"},
+            {text: "Twilight Marsh", nextScene: "TwilightMarsh"},
         ]
     },
 
@@ -270,8 +272,8 @@ const scenes = {
         text: "Opting to stay focused on your current path and avoid potential detours at Crystal Falls, you proceed with caution. While you maintain your course, you miss the opportunity to uncover ancient wisdom and must navigate through a dense thicket, encountering fierce creatures along the way.",
         image: "./img/crystalfalls.png",
         options: [
-            { text: "Starlit Grove", nextScene: "StarlitGrove" },
-            { text: "Twilight Marsh", nextScene: "TwilightMarsh" },
+            {text: "Starlit Grove", nextScene: "StarlitGrove"},
+            {text: "Twilight Marsh", nextScene: "TwilightMarsh"},
         ]
     },
 
@@ -280,12 +282,12 @@ const scenes = {
         text: "To the right, a path winds towards a tranquil grove bathed in the soft glow of starlight, where mystical creatures gather under the celestial canopy.",
         image: "./img/starlitgrove.png",
         options: [
-            { text: "Interact with Creatures", action: function() {
+            {text: "Interact with Creatures", action: function() {
                 gameState.gems.wisdom = true;
                 gameState.currentScene = "InteractWithCreatures";
                 updateGame();
             }},
-            { text: "Avoid Interaction", nextScene: "AvoidInteraction" },
+            {text: "Avoid Interaction", nextScene: "AvoidInteraction"},
         ]
     },
 
@@ -293,8 +295,8 @@ const scenes = {
         text: "Intrigued by the mystical creatures' presence, you approach the starlit grove with curiosity. They welcome you warmly, sharing their ancient songs and tales of the forest. Inspired by their wisdom and harmony, you receive a radiant gem of Wisdom, symbolizing insight gained from shared knowledge. Your journey continues with a deeper understanding of the forest's mysteries, bypassing a treacherous bog that would have otherwise hindered your progress.",
         image: "./img/starlitgrove.png",
         options: [
-            { text: "Go to the Mystic Mountains!", nextScene: "mysticMountain" },
-            { text: "Go to home page", nextScene: "start" }
+            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
+            {text: "Go to home page", nextScene: "start"}
         ]
     },
 
@@ -302,8 +304,8 @@ const scenes = {
         text: "Deciding to maintain focus on your quest, you bypass the starlit grove without engaging with the creatures. While you avoid potential distractions, you miss the opportunity to gain Understanding from the mystical creatures' teachings, encountering a dense thicket of thorns that slows your journey.",
         image: "./img/starlitgrove.png",
         options: [
-            { text: "Go to the Mystic Mountains!", nextScene: "mysticMountain" },
-            { text: "Go to home page", nextScene: "start" }
+            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
+            {text: "Go to home page", nextScene: "start"}
         ]
     },
 
@@ -312,12 +314,12 @@ const scenes = {
         text: "To the left, a misty path leads into a twilight marsh, where the air is thick with the calls of unseen creatures and the glow of distant swamp lights.",
         image: "./img/twilightmarsh.png",
         options: [
-            { text: "Navigate the Marsh", action: function() {
+            {text: "Navigate the Marsh", action: function() {
                 gameState.gems.courage = true;
                 gameState.currentScene = "NavigateTheMarsh";
                 updateGame();
             }},
-            { text: "Find a Detour", nextScene: "FindADetour" },
+            { text: "Find a Detour", nextScene: "FindADetour"},
         ]
     },
 
@@ -325,8 +327,8 @@ const scenes = {
         text: "Braving the eerie twilight marsh, you navigate through its murky waters, using your keen senses to avoid hidden perils. By demonstrating courage and perseverance, you discover a hidden passage guarded by ancient spirits, who reward you with a gleaming gem of Courage. Your journey continues with newfound bravery, bypassing a labyrinth of illusions that would have otherwise led you astray.",
         image: "./img/twilightmarsh.png",
         options: [
-            { text: "Go to the Mystic Mountains!", nextScene: "mysticMountain" },
-            { text: "Go to home page", nextScene: "start" }
+            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
+            {text: "Go to home page", nextScene: "start"}
         ]
     },
 
@@ -334,8 +336,8 @@ const scenes = {
         text: "Opting to find a detour around the twilight marsh, you carefully navigate through dense underbrush and avoid the potential dangers lurking within. While you avoid immediate risks, you miss the opportunity to demonstrate Resilience in the face of challenges, encountering a series of puzzling illusions that test your resolve.",
         image: "./img/twilightmarsh.png",
         options: [
-            { text: "Go to the Mystic Mountains!", nextScene: "mysticMountain" },
-            { text: "Go to home page", nextScene: "start" }
+            {text: "Go to the Mystic Mountains!", nextScene: "mysticMountain"},
+            {text: "Go to home page", nextScene: "start"}
         ]
     },
 
@@ -367,7 +369,7 @@ const scenes = {
                 gameState.currentScene = "celestialSummit";
                 updateGame();
             }},
-            {text: "Take a Different Path", nextScene: "takeADifferentPath" },
+            {text: "Take a Different Path", nextScene: "takeADifferentPath"},
         ]
     },
 
@@ -375,8 +377,8 @@ const scenes = {
         text: "Embracing the challenge, you ascend the steep trail towards the Celestial Summit. Along the way, you encounter tests of endurance and moments where courage is required to overcome obstacles. Upon reaching the summit, you are greeted by celestial beings who impart wisdom and grant you a radiant gem of Spirituality, symbolizing your connection with the higher realms. Your journey continues with renewed insight and a clearer path forward, bypassing a treacherous avalanche that would have otherwise blocked your way.",
         image: "./img/celestialsummit.png",
         options: [
-            {text: "Wisdom's Path", nextScene: "wisdomsPath" },
-            {text: "Stormy Pass", nextScene: "stormyPass" }
+            {text: "Wisdom's Path", nextScene: "wisdomsPath"},
+            {text: "Stormy Pass", nextScene: "stormyPass"}
         ]
     },
     
@@ -384,8 +386,8 @@ const scenes = {
         text: "Opting for a safer route, you choose to explore a longer path that avoids the challenges of the Celestial Summit. While you navigate safely, you miss the opportunity to gain Enlightenment from the celestial beings and encounter a series of intricate puzzles that test your intellect along the way.",
         image: "./img/celestialsummit.png",
         options: [
-            {text: "Wisdom's Path", nextScene: "wisdomsPath" },
-            {text: "Stormy Pass", nextScene: "stormyPass" }
+            {text: "Wisdom's Path", nextScene: "wisdomsPath"},
+            {text: "Stormy Pass", nextScene: "stormyPass"}
         ]
     },
 
@@ -399,7 +401,7 @@ const scenes = {
                 gameState.currentScene = "crystalCaverns";
                 updateGame();
             }},
-            {text: "Bypass the Caverns", nextScene: "bypassTheCaverns" },
+            {text: "Bypass the Caverns", nextScene: "bypassTheCaverns"},
         ]
     },
 
@@ -407,8 +409,8 @@ const scenes = {
         text: "Intrigued by the beauty and mystique of the Crystal Caverns, you venture into their depths. Inside, you encounter shimmering gemstones that seem to pulse with energy and ancient runes carved into the walls. By deciphering the runes and respecting the caverns' natural balance, you earn a sparkling gem of Harmony, reflecting your ability to find balance and peace in chaotic surroundings. Your journey continues with enhanced harmony, navigating through a labyrinth of crystalline formations that would have otherwise disoriented you.",
         image: "./img/crystalcaverns.png",
         options: [
-            {text: "Wisdom's Path", nextScene: "wisdomsPath" },
-            {text: "Stormy Pass", nextScene: "stormyPass" }
+            {text: "Wisdom's Path", nextScene: "wisdomsPath"},
+            {text: "Stormy Pass", nextScene: "stormyPass"}
         ]
     },
 
@@ -416,8 +418,8 @@ const scenes = {
         text: "Opting to bypass the Crystal Caverns, you skirt around their entrances, avoiding potential dangers or distractions within. While you proceed without incident, you miss the opportunity to uncover Inner Strength from the caverns' challenges and encounter a steep, rocky path that requires careful navigation.",
         image: "./img/crystalcaverns.png",
         options: [
-            {text: "Wisdom's Path", nextScene: "wisdomsPath" },
-            {text: "Stormy Pass", nextScene: "stormyPass" }
+            {text: "Wisdom's Path", nextScene: "wisdomsPath"},
+            {text: "Stormy Pass", nextScene: "stormyPass"}
         ]
     },
 
@@ -546,7 +548,7 @@ const scenes = {
 
     appreciateTheBeauty: {
         text: "Taking a moment to admire the ethereal beauty of the Luminous Peaks, you pause to reflect on the wonder and majesty of the natural world. While you appreciate the beauty, you miss the opportunity to gain Insight from the crystals' energies and encounter a steep, rocky ascent that tests your endurance.",
-        image: "./img/appreciateTheBeauty",
+        image: "./img/luminouPeak.png",
         options: [
             {text: "Go to the Royal Castle", nextScene: "royalCastle"},
             {text: "Return Home", nextScene: "start"}
@@ -557,42 +559,151 @@ const scenes = {
 
     //Start of the Royal Castle
     royalCastle: {
-        text: "You arrive at the majestic Royal Castle. Turrets rise towards the sky and banners flutter in the breeze...",
+        text: "Your arrive at the majestic Royal Castle. Turrets rise towards teh sky and banners slutter in the breeze...",
+        image: "./img/royalCastle.png",
         options: [
-            { text: "Visit the Royal Library", nextScene: "royalLibrary" },
-            { text: "Attend the Royal Court", nextScene: "royalCourt" }
+            {text: "Go to the Royal Library", nextScene: "royalLibrary"},
+            {text: "Go to the Throne Room", nextScene: "throneRoom"},
+            {text: "Go to the Grand Courtyard", nextScene: "grandCourtyard"},
+            {text: "Go to the Enchanted Gardens", nextScene: "enchantedGarden"}
         ]
     },
+
+    //Royal Library Option
     royalLibrary: {
-        text: "You enter the Royal Library, filled with ancient tomes and scrolls...",
+        text: "Passing through the breath-taking front gate of the castle, you find yourself being drawn to a spiriling tower reaching for the sky. Pushing the massive wooden door to the side reveals a sprawling library packed with books and scholars.",
+        image: "./img/royalLibrary.png",
         options: [
-            { text: "Research Ancient Lore", action: function() {
+            {text: "Research Ancient Lore", action: function() {
                 gameState.gems.knowledge = true;
-                gameState.currentScene = "ancientLore";
-                addToInventory("Ancient Tome");
+                gameState.currentScene = "researchAncientLore";
                 updateGame();
             }},
-            { text: "Seek Guidance from the Librarian", action: function() {
-                gameState.currentScene = "librarianGuidance";
+            {text: "Seek Guidance from the Librarian", action: function() {
+                gameState.gems.wisdom = true;
+                gameState.currentScene = "seekGuidanceFromTheLibrarian";
                 updateGame();
-            }}
+            }},
         ]
     },
-    royalCourt: {
-        text: "You attend the Royal Court, where decisions shaping the kingdom's fate are made...",
+
+    researchAncientLore: {
+        text: "You become deeply facinated with the history of the kingdom you've ventured through. You find a radiant gem of Knowledge. With it you become a great scholar of the Royal Library.",
+        image: "./img/royalLibrary.png",
         options: [
-            { text: "Present Your Ideas to the Monarch", action: function() {
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },
+
+    seekGuidanceFromTheLibrarian: {
+        text: "You seek the guidance of the Great Librarian at the top of the spiriling tower. Looking out over the vast kingdom you come to a realization that your wisdom can be used to help, so you set off as a philosopher to teach the world.",
+        image: "./img/royalLibrary.png",
+        options: [
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },
+
+    //Throne Room Option
+    throneRoom: {
+        text: "Passing through the gates there is grand path leading up towards the main centeral castle. The path is flanked by rows upon rows of gaurds all watching as you climb the steps to the main hall.",
+        image: "./img/throneRoom.png",
+        options: [
+            {text: "Request Audience with the King and Queen", action: function() {
                 gameState.gems.leadership = true;
-                gameState.currentScene = "presentIdeas";
-                updateStats('diplomaticChoice');
+                gameState.currentScene = "requestAudienceWithTheKingAndQueen";
                 updateGame();
             }},
-            { text: "Observe Court Proceedings", action: function() {
-                gameState.currentScene = "observeProceedings";
+            {text: "Observe a Court Proceeding", action: function() {
+                gameState.gems.justice = true;
+                gameState.currentScene = "observeACourtProceeding";
                 updateGame();
-            }}
+            }},
         ]
-    }
+    },
+
+    requestAudienceWithTheKingAndQueen: {
+        text: "Having your request accpeted, you enter the throne room and see two massive gold and silver thrones with the King and Queen sitting upon them. You kneel with your head bent, here you see a glowing stone at your feet. You pick it up and gain a gem of Leadership. You ask with a new found voice to join the kingdoms army and the King accepts. You climb your way through the ranks becoming a royal general of the army.",
+        image: "./img/throneRoom.png",
+        options: [
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },
+
+    observeACourtProceeding: {
+        text: "Wondering through the hall you sumble into a roayl court hearing. You decide to sit and watch justice being carried out. You're inspired as the judge carries out swift and accurate justice upon proven criminals. This inspiration manifests into a glowing gem of Justice. You further your knowledge and become a highly respected justice on the Royal Court.",
+        image: "./img/throneRoom.png",
+        options: [
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },
+
+    //Grand Courtyard Option
+    grandCourtyard: {
+        text: "Passing through the gates you make your way around the main castle to the back where a massive courtyard strechs out before you.",
+        image: "./img/grandCourtyard.png",
+        options: [
+            {text: "Challenge a Knight", action: function() {
+                gameState.gems.courage = true;
+                gameState.currentScene = "challengeAKnight";
+                updateGame();
+            }},
+            {text: "Visit the Merchants", action: function() {
+                gameState.gems.curiosity = true;
+                gameState.currentScene = "visitTheMerchants";
+                updateGame();
+            }},
+        ]
+    },
+
+    challengeAKnight: {
+        text: "As you pick up your weapon, you notice a glowing stone embedded in the hilt. You gain a gem of courage. Your heartbeat slows as a coolness passes over you filling you with passion and bravery. You overcome impossible odds by defeating every knight in the army catching the eye of the King who knights you so you can join the armies ranks.",
+        image: "./img/grandCourtyard.png",
+        options: [
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },
+
+    namedConcequence: {
+        text: "You approach a merchant and ask if you could ask him a few questions. The merchant agrees so you sit down and start firing off question after question the merchant is happy to answer all of them. A glistering gem forms in your hand and you gain a gem of curiosity. With this new found wonder you set off and become a extermely wealthy merchant.",
+        image: "./img/grandCourtyard.png",
+        options: [
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },
+
+    //Enchanted Gardens Option
+    enchantedGarden: {
+        text: "Passing through the gates you follow a less traveled path that leads you to a magnificent garden teeming with life.",
+        image: "./img/enchantedGarden",
+        options: [
+            {text: "Explore the Garden", action: function() {
+                gameState.gems.harmony = true;
+                gameState.currentScene = "exploreTheGarden";
+                updateGame();
+            }},
+            {text: "Seek Wisdom from Nature", action: function() {
+                gameState.gems.wisdom = true;
+                gameState.currentScene = "seekWisdomFromNature";
+                updateGame();
+            }},
+        ]
+    },
+
+    exploreTheGarden: {
+        text: "Venturing into the garden, you see beautiful flowers sprouting from bushes and animals running free through the trees. You come to a circle of rose pushes with a simple flat rock in the middle. Upon sitting on the rock you feel a warmth run up your spine and a small rock appears in your palm. You receive a gem of Harmony. With this new found understanding of the world and peace you become a royal diplomat searching to resolve conflicts peacefully.",
+        image: "./img/enchantedGarden",
+        options: [
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },
+
+    seekWisdomFromNature: {
+        text: "As you watch the animals play and plants grow, you sit and meditate searching for answers. Plants grow around you and animals come with food and water. After a while you open your eyes to see a small stone was placed in your hand. Your gain a gem of Wisdom. With this wisdom from nature you become a sage who's purpose is to save nature from destruction.",
+        image: "./img/enchantedGarden",
+        options: [
+            {text: "Return Home", nextScene: "start"}
+        ]
+    },    
 };
 
 // Function to update the game interface with current scene and options
